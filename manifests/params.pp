@@ -11,6 +11,8 @@ class dovecot::params {
       {
         /^[5-7].*$/:
         {
+          $postfix_username_uid_default='89'
+          $postfix_username_gid_default='89'
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
@@ -25,6 +27,9 @@ class dovecot::params {
           {
             /^14.*$/:
             {
+              $postfix_username_uid_default='110'
+              $postfix_username_gid_default='115'
+              fail('unimplemented')
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
