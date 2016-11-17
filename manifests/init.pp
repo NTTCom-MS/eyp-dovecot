@@ -2,6 +2,7 @@
 # dovecot concat
 # 00 - base
 # 10 - passdb
+# 20 - userdb
 #
 class dovecot(
                             $manage_package         = true,
