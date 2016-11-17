@@ -1,6 +1,6 @@
 define dovecot::account (
-                          $account,
                           $password,
+                          $account = $name,
                           $passwdfile = $dovecot::params::passwdfile_default,
                         ) {
   Exec {
