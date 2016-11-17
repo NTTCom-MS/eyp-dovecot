@@ -1,7 +1,9 @@
 class dovecot::params {
 
-  $package_name="dovecot"
-  $service_name="dovecot"
+  $package_name='dovecot'
+  $service_name='dovecot'
+
+  $passwdfile_default = '/etc/dovecot/passwd'
 
   case $::osfamily
   {

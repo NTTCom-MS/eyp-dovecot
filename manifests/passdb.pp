@@ -6,7 +6,7 @@ class dovecot::passdb(
                         $driver     = 'passwd-file',
                         #passwd-file
                         $scheme     = 'SHA1',
-                        $passwdfile = '/etc/dovecot/passwd',
+                        $passwdfile = $dovecot::params::passwdfile_default,
                       ) inherits dovecot::params {
 
   Exec {
