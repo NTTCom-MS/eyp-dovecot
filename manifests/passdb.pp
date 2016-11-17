@@ -14,4 +14,19 @@ class dovecot::passdb(
     order   => '10',
     content => template("${module_name}/passdb/${driver}.erb"),
   }
+
+  $dirname_passwdfile=dirname($passwdfile)
+
+  exec { "passwd eyp-dovecot dirname ${passwdfile}":
+    command => "mkdir -p ${dirname_passwdfile}",
+    create  => $dirname_passwdfile,
+  }
+
+  concat { $passwdfile:
+    ensure => 'present',
+    owner  => 'root',
+    group  => 'root',
+    mode   => '0644',
+  }
+
 }
