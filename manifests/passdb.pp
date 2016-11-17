@@ -9,6 +9,10 @@ class dovecot::passdb(
                         $passwdfile = '/etc/dovecot/passwd',
                       ) inherits dovecot::params {
 
+  Exec {
+    path => '/bin:/sbin:/usr/bin:/usr/sbin',
+  }
+                        
   concat::fragment{ '/etc/dovecot/dovecot.conf passdb':
     target  => '/etc/dovecot/dovecot.conf',
     order   => '10',
