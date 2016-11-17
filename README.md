@@ -42,15 +42,22 @@ management, etc.) this is the time to mention it.
 
 ### Setup Requirements
 
-This module requires pluginsync enabled 
+This module requires pluginsync enabled
 
 ### Beginning with dovecot
 
-The very basic steps needed for a user to get the module up and running.
+```
+class { 'dovecot': }
+class { 'dovecot::userdb': }
+class { 'dovecot::passdb': }
+class { 'dovecot::auth': }
+class { 'dovecot::auth::unixlistener': }
+class { 'dovecot::imaplogin': }
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+dovecot::account { 'caca@merda.com':
+  password => 'putamerda',
+}
+```
 
 ## Usage
 
