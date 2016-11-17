@@ -6,6 +6,7 @@
 # 30 - auth
 # 31 - auth - unixlistener
 # 39 - end auth
+# 40 - imap login
 #
 class dovecot(
                             $manage_package         = true,
