@@ -26,12 +26,11 @@ class dovecot::passdb(
     creates => $dirname_passwdfile,
   }
 
-  concat { $passwdfile:
+  file { $passwdfile:
     ensure => 'present',
     owner  => 'root',
     group  => 'root',
     mode   => '0644',
-    force  => true,
   }
 
 }
