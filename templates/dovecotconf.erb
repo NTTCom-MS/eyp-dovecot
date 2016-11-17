@@ -25,7 +25,7 @@ listen = <%= @listen.join(',') %>
 <% if defined?(@login_greeting) -%>
 # Greeting message for clients.
 login_greeting = <%= @login_greeting %>
-<% end %>
+<% end -%>
 
 # Space separated list of trusted network ranges. Connections from these
 # IPs are allowed to override their IP addresses and ports (for logging and
