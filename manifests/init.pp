@@ -3,6 +3,9 @@
 # 00 - base
 # 10 - passdb
 # 20 - userdb
+# 30 - auth
+# 31 - auth - unixlistener
+# 39 - end auth
 #
 class dovecot(
                             $manage_package         = true,
