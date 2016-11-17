@@ -12,7 +12,7 @@ class dovecot::passdb(
   Exec {
     path => '/bin:/sbin:/usr/bin:/usr/sbin',
   }
-                        
+
   concat::fragment{ '/etc/dovecot/dovecot.conf passdb':
     target  => '/etc/dovecot/dovecot.conf',
     order   => '10',
@@ -23,7 +23,7 @@ class dovecot::passdb(
 
   exec { "passwd eyp-dovecot dirname ${passwdfile}":
     command => "mkdir -p ${dirname_passwdfile}",
-    create  => $dirname_passwdfile,
+    creates => $dirname_passwdfile,
   }
 
   concat { $passwdfile:
