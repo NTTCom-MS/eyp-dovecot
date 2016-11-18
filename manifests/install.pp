@@ -13,7 +13,7 @@ class dovecot::install inherits dovecot {
     }
 
     # drwxr-xr-x 5 root dovecot 700 Nov 17 16:47 /var/run/dovecot/
-    file { $dovecot::params::package_name:
+    file { $dovecot::base_dir:
       ensure  => 'directory',
       owner   => 'root',
       group   => 'dovecot',
