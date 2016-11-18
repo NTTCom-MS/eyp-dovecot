@@ -5,9 +5,10 @@
 #     user = postfix
 # }
 class dovecot::auth::unixlistener(
-                                    $user  = 'postfix',
-                                    $group = 'postfix',
-                                    $mode  = '0660',
+                                    $user   = 'postfix',
+                                    $group  = 'postfix',
+                                    $mode   = '0660',
+                                    $socket = 'auth-client',
   ) inherits dovecot::params {
 
   concat::fragment{ '/etc/dovecot/dovecot.conf auth unixlistener':
