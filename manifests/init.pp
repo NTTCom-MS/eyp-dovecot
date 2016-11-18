@@ -28,6 +28,7 @@ class dovecot(
                             $first_valid_gid        = $dovecot::params::postfix_username_gid_default,
                             $mail_location          = 'maildir:/var/vmail/%d/%n',
                             $ssl                    = false,
+                            $base_dir               = '/var/run/dovecot/',
                           ) inherits dovecot::params{
 
   validate_re($package_ensure, [ '^present$', '^installed$', '^absent$', '^purged$', '^held$', '^latest$' ], 'Not a supported package_ensure: present/absent/purged/held/latest')

@@ -1,5 +1,5 @@
 
-    unix_listener auth-client {
+    unix_listener <%= @socket %> {
         group = <%= @group %>
         mode = <%= @mode %>
         user = <%= @user %>
