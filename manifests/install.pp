@@ -8,7 +8,7 @@ class dovecot::install inherits dovecot {
 
     exec { "mkdir eyp-dovecot ${dovecot::base_dir}":
       command => "mkdir -p ${dovecot::base_dir}",
-      creates => ${dovecot::base_dir},
+      creates => $dovecot::base_dir,
       require => Package[$dovecot::params::package_name],
     }
 
