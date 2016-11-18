@@ -2,7 +2,7 @@
   "name": "eyp-dovecot",
   "version": "0.1.0",
   "author": "eyp",
-  "summary": null,
+  "summary": "dovecot installation and IMAP basic setup",
   "license": "Apache-2.0",
   "source": "https://github.com/NTTCom-MS/eyp-dovecot",
   "project_page": null,
