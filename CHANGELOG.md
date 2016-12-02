@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.3
+
+* bugfix for new installs - bandcamp contribution: https://github.com/NTTCom-MS/eyp-dovecot/pull/3
+
 ## 0.1.2
 
 * added dependency for **dovecot::account**

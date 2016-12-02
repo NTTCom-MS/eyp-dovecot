@@ -1,13 +1,13 @@
 class dovecot::install inherits dovecot {
 
+  Exec {
+    path => '/bin:/sbin:/usr/bin:/usr/sbin',
+  }
+  
   if($dovecot::manage_package)
   {
     package { $dovecot::params::package_name:
       ensure => $dovecot::package_ensure,
-    }
-
-    Exec {
-      path => '/bin:/sbin:/usr/bin:/usr/sbin',
     }
 
     exec { "mkdir eyp-dovecot ${dovecot::base_dir}":
