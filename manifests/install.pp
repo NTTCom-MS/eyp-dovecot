@@ -6,6 +6,10 @@ class dovecot::install inherits dovecot {
       ensure => $dovecot::package_ensure,
     }
 
+    Exec {
+      path => '/bin:/sbin:/usr/bin:/usr/sbin',
+    }
+
     exec { "mkdir eyp-dovecot ${dovecot::base_dir}":
       command => "mkdir -p ${dovecot::base_dir}",
       creates => $dovecot::base_dir,
