@@ -17,5 +17,10 @@ describe 'dovecot class' do
       expect(apply_manifest(pp).exit_code).to eq(0)
     end
 
+    #/sbin/initctl --version
+    it "check init" do
+      expect(shell("/sbin/initctl --version").exit_code).to be_zero
+    end
+
   end
 end
