@@ -1,6 +1,6 @@
 class dovecot::params {
 
-  $package_name='dovecot'
+
   $service_name='dovecot'
 
   $passwdfile_default = '/etc/dovecot/passwd'
@@ -9,6 +9,7 @@ class dovecot::params {
   {
     'redhat':
     {
+      $package_name='dovecot'
       case $::operatingsystemrelease
       {
         /^[5-7].*$/:
@@ -21,6 +22,7 @@ class dovecot::params {
     }
     'Debian':
     {
+      $package_name=[ 'dovecot-core', 'dovecot-imapd' ]
       case $::operatingsystem
       {
         'Ubuntu':
@@ -31,7 +33,6 @@ class dovecot::params {
             {
               $postfix_username_uid_default='110'
               $postfix_username_gid_default='115'
-              fail('unimplemented')
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
