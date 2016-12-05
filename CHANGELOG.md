@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.4
+
+* ubuntu 14.04 support
+
 ## 0.1.3
 
 * bugfix for new installs - bandcamp contribution: https://github.com/NTTCom-MS/eyp-dovecot/pull/3

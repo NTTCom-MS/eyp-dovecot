@@ -31,8 +31,8 @@ class dovecot::params {
           {
             /^14.*$/:
             {
-              $postfix_username_uid_default='110'
-              $postfix_username_gid_default='115'
+              $postfix_username_uid_default='89'
+              $postfix_username_gid_default='89'
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
           }
