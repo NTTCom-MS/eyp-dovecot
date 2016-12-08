@@ -31,16 +31,30 @@ class dovecot::params {
           {
             /^14.*$/:
             {
-              # $postfix_username_uid_default=hiera('::eyp_postfix_uid', '89'),
-              $postfix_username_uid_default = $facts['eyp_postfix_uid'] ? {
-                undef   => '89',
-                default => $facts['eyp_postfix_uid'],
+              if has_key($facts, 'eyp_postfix_uid')
+              {
+                # $postfix_username_uid_default=hiera('::eyp_postfix_uid', '89'),
+                $postfix_username_uid_default = $facts['eyp_postfix_uid'] ? {
+                  undef   => '89',
+                  default => $facts['eyp_postfix_uid'],
+                }
+              }
+              else
+              {
+                $postfix_username_uid_default = '89'
               }
 
-              # $postfix_username_gid_default=hiera('::eyp_postfix_gid', '89'),
-              $postfix_username_gid_default = $facts['eyp_postfix_gid'] ? {
-                undef   => '89',
-                default => $facts['eyp_postfix_gid'],
+              if has_key($facts, 'eyp_postfix_gid')
+              {
+                # $postfix_username_gid_default=hiera('::eyp_postfix_gid', '89'),
+                $postfix_username_gid_default = $facts['eyp_postfix_gid'] ? {
+                  undef   => '89',
+                  default => $facts['eyp_postfix_gid'],
+                }
+              }
+              else
+              {
+                $postfix_username_gid_default = '89'
               }
             }
             default: { fail("Unsupported Ubuntu version! - ${::operatingsystemrelease}")  }
