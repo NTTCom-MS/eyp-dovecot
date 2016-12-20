@@ -12,10 +12,5 @@ class dovecot::imaplogin(
     order   => '40',
     content => template("${module_name}/imaplogin/imaplogin.erb"),
   }
-
-  concat::fragment{ '/etc/dovecot/dovecot.conf imap opts':
-    target  => '/etc/dovecot/dovecot.conf',
-    order   => '01',
-    content => template("${module_name}/imap/imap_opts.erb"),
-  }
+  
 }
