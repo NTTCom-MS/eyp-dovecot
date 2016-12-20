@@ -4,7 +4,7 @@
 # }
 class dovecot::imaplogin(
                           $process_min_avail = '1',
-                          $user = 'postfix',
+                          $user              = 'postfix',
                         ) inherits dovecot::params {
 
   concat::fragment{ '/etc/dovecot/dovecot.conf imaplogin':
