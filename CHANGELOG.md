@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.7
+
+* added **imap_idle_notify_interval** in minutes using variable **imap_idle_notify_interval_minutes**
+
 ## 0.1.4
 
 * ubuntu 14.04 support

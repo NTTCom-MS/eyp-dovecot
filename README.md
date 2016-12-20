@@ -82,7 +82,7 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
-TODO list
+* process_min_avail should be set to be at least the number of CPU cores in the system, so that all of them will be used. 
 
 ### Contributing
 
