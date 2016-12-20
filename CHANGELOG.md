@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 0.1.5
+## 0.1.6
 
 * added **imap_idle_notify_interval** in minutes using variable **imap_idle_notify_interval_minutes**
 
