@@ -19,4 +19,9 @@ class dovecot::config inherits dovecot {
     content => template("${module_name}/imap/imap_opts.erb"),
   }
 
+  # [Definition]
+  # failregex = (?: pop3-login|imap-login): (?:Authentication failure|Aborted login \(auth failed|Aborted login \(tried to use disabled|Disconnected \(auth failed).*rip=(?P<host>\S*),.*
+  # ignoreregex =
+
+
 }
