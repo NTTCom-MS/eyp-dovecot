@@ -1,6 +1,6 @@
 {
   "name": "eyp-dovecot",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "eyp",
   "summary": "dovecot installation and IMAP basic setup",
   "license": "Apache-2.0",
@@ -36,7 +36,7 @@
     },
     {
       "operatingsystem": "Ubuntu",
-      "operatingsystemrelease": [ "14.04" ]
+      "operatingsystemrelease": [ "14.04", "16.04" ]
     }
   ],
   "requirements": [

@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.8
+
+* added Ubuntu 16.04 support
+
 ## 0.1.7
 
 * added **imap_idle_notify_interval** in minutes using variable **imap_idle_notify_interval_minutes**
