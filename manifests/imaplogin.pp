@@ -12,5 +12,4 @@ class dovecot::imaplogin(
     order   => '40',
     content => template("${module_name}/imaplogin/imaplogin.erb"),
   }
-  
 }

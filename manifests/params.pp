@@ -22,14 +22,14 @@ class dovecot::params {
     }
     'Debian':
     {
-      $package_name=[ 'dovecot-core', 'dovecot-imapd' ]
+      $package_name=[ 'dovecot-core', 'dovecot-imapd', 'dovecot-lmtpd' ]
       case $::operatingsystem
       {
         'Ubuntu':
         {
           case $::operatingsystemrelease
           {
-            /^14.*$/:
+            /^1[46].*$/:
             {
               if($::facts!=undef)
               {
