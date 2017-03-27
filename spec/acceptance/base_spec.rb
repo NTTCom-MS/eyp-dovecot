@@ -4,6 +4,10 @@ require_relative './version.rb'
 describe 'dovecot class' do
 
   context 'basic setup' do
+    it "vmail dir" do
+      expect(shell("bash -c 'mkdir -p /var/vmail; chmod 777 /var/vmail'").exit_code).to be_zero
+    end
+
     # Using puppet_apply as a helper
     it 'should work with no errors' do
       pp = <<-EOF
