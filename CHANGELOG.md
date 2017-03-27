@@ -2,7 +2,7 @@
 
 ## 0.1.10
 
-* process_min_avail is set to the number of CPU cores in the system
+* **process_min_avail** is set to the number of CPU cores in the system
 
 ## 0.1.9
 
