@@ -35,11 +35,11 @@ describe 'dovecot class' do
     end
 
     it "check banner" do
-      expect(shell("echo | nc localhost 143 | grep 'ready to rock'").exit_code).to be_zero
+      expect(shell("bash -c '(sleep 1; echo ; sleep 1)| telnet 127.0.0.1 143 | grep \"ready to rock\"'").exit_code).to be_zero
     end
 
     it "check login" do
-      expect(shell("bash -c '(sleep 1; echo \". login jordi@prats.cat demopassw0rd\"; sleep 5; echo \". LOGOUT\"; sleep 5;) | telnet localhost 143 | grep \"Logged in\"'").exit_code).to be_zero
+      expect(shell("bash -c '(sleep 1; echo \". login jordi@prats.cat demopassw0rd\"; sleep 5; echo \". LOGOUT\"; sleep 5;) | telnet 127.0.0.1 143 | grep \"Logged in\"'").exit_code).to be_zero
     end
 
 
