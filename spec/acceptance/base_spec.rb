@@ -38,5 +38,10 @@ describe 'dovecot class' do
       expect(shell("echo | nc localhost 143 | grep 'ready to rock'").exit_code).to be_zero
     end
 
+    it "check login" do
+      expect(shell("bash -c '(sleep 1; echo \". login jordi@prats.cat demopassw0rd\"; sleep 5; echo \". LOGOUT\"; sleep 5;) | telnet localhost 143 | grep \"Logged in\"'").exit_code).to be_zero
+    end
+
+
   end
 end
