@@ -54,8 +54,8 @@ class { 'dovecot::auth': }
 class { 'dovecot::auth::unixlistener': }
 class { 'dovecot::imaplogin': }
 
-dovecot::account { 'caca@merda.com':
-  password => 'putamerda',
+dovecot::account { '19f70fd5939e2e6c873888@systemadmin.es':
+  password => 'demopassw0rd',
 }
 ```
 
@@ -82,7 +82,7 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
-* process_min_avail should be set to be at least the number of CPU cores in the system, so that all of them will be used. 
+* lots of dovecot functionalities still needs to be added to this module
 
 ### Contributing
 

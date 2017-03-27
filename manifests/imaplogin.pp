@@ -3,7 +3,7 @@
 #   user = postfix
 # }
 class dovecot::imaplogin(
-                          $process_min_avail = '1',
+                          $process_min_avail = $::processorcount,
                           $user              = 'postfix',
                         ) inherits dovecot::params {
 
