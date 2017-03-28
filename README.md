@@ -21,22 +21,27 @@ basic dovecot installation
 
 ## Module Description
 
-This module is intended to be used by eyp-postfix to setup a virtual domains for postfix using SASL authentication. Anyway, it can be used to configure dovecot without as a standalone service
+This module is intended to be used by eyp-postfix to setup a virtual domains for postfix using SASL authentication. Anyway, it can also be used to configure dovecot as a standalone service
 
 ## Setup
 
 ### What dovecot affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* package management
+* service management
+* configuration management:
+  * general config file: /etc/dovecot/dovecot.conf
+  * local usernames (default: /etc/dovecot/passwd)
 
 ### Setup Requirements
 
-This module requires pluginsync enabled
+This module requires pluginsync enabled.
+
+**dovecot::mail_location** is a prerequisite to be able to deploy **dovecot**
 
 ### Beginning with dovecot
+
+basic setup (dovecot with SASL authentication using a file to store passwords):
 
 ```
 class { 'dovecot': }
@@ -65,7 +70,12 @@ with things. (We are working on automating this section!)
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Tested on:
+* CentOS 5
+* CentOS 6
+* CentOS 7
+* Ubuntu 14.04
+* Ubuntu 16.04
 
 ## Development
 
@@ -74,7 +84,7 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
-* lots of dovecot functionalities still needs to be added to this module
+* lots of dovecot functionalities still needs to be implemented in this module
 
 ### Contributing
 

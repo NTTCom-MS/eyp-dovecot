@@ -9,7 +9,7 @@ class dovecot::passdb(
                         $passwdfile = $dovecot::params::passwdfile_default,
                       ) inherits dovecot::params {
   include ::dovecot
-  
+
   Exec {
     path => '/bin:/sbin:/usr/bin:/usr/sbin',
   }
