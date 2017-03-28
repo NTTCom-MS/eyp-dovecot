@@ -14,6 +14,7 @@ describe 'dovecot class' do
 
       class { 'dovecot':
         default_login_user => 'dovecot',
+        mail_access_groups => 'dovecot',
       }
 
     	class { 'dovecot::userdb': }
