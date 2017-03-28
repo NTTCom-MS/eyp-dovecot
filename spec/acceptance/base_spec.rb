@@ -8,6 +8,14 @@ describe 'dovecot class' do
       expect(shell("bash -c 'mkdir -p /var/vmail; chmod 777 /var/vmail'").exit_code).to be_zero
     end
 
+    #/etc/puppetlabs/code/environments/production/modules
+    apply_manifest_opts = {
+      :catch_failures => true,
+      # I seem to need this otherwise Puppet doesn't pick up the required modules.
+      :modulepath     => '/etc/puppetlabs/code/environments/production/modules/',
+      :debug          => true,
+    }
+
     # Using puppet_apply as a helper
     it 'should work with no errors' do
       pp = <<-EOF
@@ -30,8 +38,8 @@ describe 'dovecot class' do
       EOF
 
       # Run it twice and test for idempotency
-      expect(apply_manifest(pp).exit_code).to_not eq(1)
-      expect(apply_manifest(pp).exit_code).to eq(0)
+      expect(apply_manifest(pp, apply_manifest_opts).exit_code).to_not eq(1)
+      expect(apply_manifest(pp, apply_manifest_opts).exit_code).to eq(0)
     end
 
     it "sleep 10 to make sure dovecot is started" do
