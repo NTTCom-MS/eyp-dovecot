@@ -25,8 +25,14 @@ describe 'dovecot class' do
     	class { 'dovecot::userdb': }
     	class { 'dovecot::passdb': }
     	class { 'dovecot::auth': }
-    	class { 'dovecot::auth::unixlistener': }
-    	class { 'dovecot::imaplogin': }
+
+    	class { 'dovecot::auth::unixlistener':
+        user   => 'dovecot',
+        group  => 'dovecot',
+      }
+    	class { 'dovecot::imaplogin':
+        user => 'dovecot',
+      }
 
     	dovecot::account { 'jordi@prats.cat':
     	  password => 'demopassw0rd',
