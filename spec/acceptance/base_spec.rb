@@ -12,6 +12,8 @@ describe 'dovecot class' do
     it 'should work with no errors' do
       pp = <<-EOF
 
+      user { 'postfix': }
+      ->
       class { 'dovecot': }
     	class { 'dovecot::userdb': }
     	class { 'dovecot::passdb': }
