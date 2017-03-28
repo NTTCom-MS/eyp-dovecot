@@ -12,12 +12,10 @@ describe 'dovecot class' do
     it 'should work with no errors' do
       pp = <<-EOF
 
-      user { 'postfix': }
-      ->
       class { 'dovecot':
         default_login_user => 'dovecot',
       }
-      
+
     	class { 'dovecot::userdb': }
     	class { 'dovecot::passdb': }
     	class { 'dovecot::auth': }
