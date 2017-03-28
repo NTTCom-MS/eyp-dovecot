@@ -71,7 +71,6 @@ with things. (We are working on automating this section!)
 ## Limitations
 
 Tested on:
-* CentOS 5
 * CentOS 6
 * CentOS 7
 * Ubuntu 14.04
