@@ -54,7 +54,7 @@ class { 'dovecot::auth': }
 class { 'dovecot::auth::unixlistener': }
 class { 'dovecot::imaplogin': }
 
-dovecot::account { '19f70fd5939e2e6c873888@systemadmin.es':
+dovecot::account { 'demo@demo.systemadmin.es':
   password => 'demopassw0rd',
 }
 ```

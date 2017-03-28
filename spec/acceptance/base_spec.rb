@@ -14,7 +14,10 @@ describe 'dovecot class' do
 
       user { 'postfix': }
       ->
-      class { 'dovecot': }
+      class { 'dovecot':
+        default_login_user => 'dovecot',
+      }
+      
     	class { 'dovecot::userdb': }
     	class { 'dovecot::passdb': }
     	class { 'dovecot::auth': }
