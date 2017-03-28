@@ -10,6 +10,7 @@ class dovecot::userdb(
                         $home            = '/var/vmail/%d/%n',
                         $allow_all_users = true,
                       ) inherits dovecot::params {
+  include ::dovecot
 
   concat::fragment{ '/etc/dovecot/dovecot.conf userdb':
     target  => '/etc/dovecot/dovecot.conf',
