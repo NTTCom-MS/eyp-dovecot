@@ -12,7 +12,7 @@ describe 'dovecot class' do
     apply_manifest_opts = {
       :catch_failures => true,
       # I seem to need this otherwise Puppet doesn't pick up the required modules.
-      :modulepath     => '/etc/puppetlabs/code/modules',
+      # :modulepath     => '/etc/puppetlabs/code/modules',
       :debug          => true,
     }
 
