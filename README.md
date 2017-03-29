@@ -17,34 +17,31 @@
 
 ## Overview
 
-A one-maybe-two sentence summary of what the module does/what problem it solves.
-This is your 30 second elevator pitch for your module. Consider including
-OS/Puppet version it works with.
+basic dovecot installation
 
 ## Module Description
 
-If applicable, this section should have a brief description of the technology
-the module integrates with and what that integration enables. This section
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?"
-
-If your module has a range of functionality (installation, configuration,
-management, etc.) this is the time to mention it.
+This module is intended to be used by eyp-postfix to setup a virtual domains for postfix using SASL authentication. Anyway, it can also be used to configure dovecot as a standalone service but eyp-postfix is a dependency
 
 ## Setup
 
 ### What dovecot affects
 
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute on the system it's installed on.
-* This is a great place to stick any warnings.
-* Can be in list or paragraph form.
+* package management
+* service management
+* configuration management:
+  * general config file: /etc/dovecot/dovecot.conf
+  * local usernames (default: /etc/dovecot/passwd)
 
 ### Setup Requirements
 
-This module requires pluginsync enabled
+This module requires pluginsync enabled.
+
+**dovecot::mail_location** is a prerequisite to be able to deploy **dovecot**
 
 ### Beginning with dovecot
+
+basic setup (dovecot with SASL authentication using a file to store passwords):
 
 ```
 class { 'dovecot': }
@@ -54,8 +51,8 @@ class { 'dovecot::auth': }
 class { 'dovecot::auth::unixlistener': }
 class { 'dovecot::imaplogin': }
 
-dovecot::account { 'caca@merda.com':
-  password => 'putamerda',
+dovecot::account { 'demo@demo.systemadmin.es':
+  password => 'demopassw0rd',
 }
 ```
 
@@ -73,7 +70,11 @@ with things. (We are working on automating this section!)
 
 ## Limitations
 
-This is where you list OS compatibility, version compatibility, etc.
+Tested on:
+* CentOS 6
+* CentOS 7
+* Ubuntu 14.04
+* Ubuntu 16.04
 
 ## Development
 
@@ -82,7 +83,7 @@ have some test to check both presence and absence of any feature
 
 ### TODO
 
-* process_min_avail should be set to be at least the number of CPU cores in the system, so that all of them will be used. 
+* lots of dovecot functionalities still needs to be implemented in this module
 
 ### Contributing
 

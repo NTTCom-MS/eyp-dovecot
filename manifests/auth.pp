@@ -1,6 +1,7 @@
 class dovecot::auth(
                       $user = 'root',
                     ) inherits dovecot::params {
+  include ::dovecot
 
   concat::fragment{ '/etc/dovecot/dovecot.conf auth ini':
     target  => '/etc/dovecot/dovecot.conf',

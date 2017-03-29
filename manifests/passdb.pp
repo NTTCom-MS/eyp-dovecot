@@ -8,6 +8,7 @@ class dovecot::passdb(
                         $scheme     = 'SHA1',
                         $passwdfile = $dovecot::params::passwdfile_default,
                       ) inherits dovecot::params {
+  include ::dovecot
 
   Exec {
     path => '/bin:/sbin:/usr/bin:/usr/sbin',
