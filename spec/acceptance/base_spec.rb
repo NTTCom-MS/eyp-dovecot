@@ -45,6 +45,10 @@ describe 'dovecot class' do
       expect(apply_manifest(pp).exit_code).to eq(0)
     end
 
+    it "workarround for ubuntu14.04 dovecot startup" do
+      expect(shell("lsb_release -a | grep trusty; if [ $? -eq 0 ]; then /usr/sbin/dovecot -F -c /etc/dovecot/dovecot.conf & fi").exit_code).to be_zero
+    end
+
     it "sleep 10 to make sure dovecot is started" do
       expect(shell("sleep 10").exit_code).to be_zero
     end
@@ -56,11 +60,6 @@ describe 'dovecot class' do
     it "check login" do
       expect(shell("bash -c '(sleep 1; echo \". login jordi@prats.cat demopassw0rd\"; sleep 5; echo \". LOGOUT\"; sleep 5;) | telnet 127.0.0.1 143 | grep \"Logged in\"'").exit_code).to be_zero
     end
-
-    it "logs" do
-      expect(shell("/usr/sbin/dovecot -F -c /etc/dovecot/dovecot.conf").exit_code).to be_zero
-    end
-
 
   end
 end
