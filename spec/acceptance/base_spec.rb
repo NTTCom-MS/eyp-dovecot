@@ -57,6 +57,10 @@ describe 'dovecot class' do
       expect(shell("bash -c '(sleep 1; echo \". login jordi@prats.cat demopassw0rd\"; sleep 5; echo \". LOGOUT\"; sleep 5;) | telnet 127.0.0.1 143 | grep \"Logged in\"'").exit_code).to be_zero
     end
 
+    it "logs" do
+      expect(shell("cat /var/log/syslog /var/log/mail.log").exit_code).to be_zero
+    end
+
 
   end
 end
