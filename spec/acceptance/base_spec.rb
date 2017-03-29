@@ -58,7 +58,7 @@ describe 'dovecot class' do
     end
 
     it "logs" do
-      expect(shell("cat /var/log/syslog /var/log/mail.log").exit_code).to be_zero
+      expect(shell("/usr/sbin/dovecot -F -c /etc/dovecot/dovecot.conf").exit_code).to be_zero
     end
 
 
