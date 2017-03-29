@@ -46,7 +46,7 @@ describe 'dovecot class' do
     end
 
     it "workarround for ubuntu14.04 dovecot startup" do
-      expect(shell("lsb_release -a | grep trusty; if [ $? -eq 0 ]; then /usr/sbin/dovecot -F -c /etc/dovecot/dovecot.conf & fi").exit_code).to be_zero
+      expect(shell("lsb_release -a | grep trusty; if [ $? -eq 0 ]; then /usr/sbin/dovecot -F -c /etc/dovecot/dovecot.conf & fi; exit 0").exit_code).to be_zero
     end
 
     it "sleep 10 to make sure dovecot is started" do
