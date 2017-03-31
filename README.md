@@ -58,15 +58,27 @@ dovecot::account { 'demo@demo.systemadmin.es':
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+Right now does not support may options, it's intented to be in a small MTA server (does not support LDAP auth)
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### classes
+
+#### dovecot
+
+#### dovecot::auth
+
+#### dovecot::auth::unixlistener
+
+#### dovecot::imaplogin
+
+#### dovecot::passdb
+
+#### dovecot::userdb
+
+### defines
+
+#### dovecot::account
 
 ## Limitations
 
