@@ -58,7 +58,7 @@ dovecot::account { 'demo@demo.systemadmin.es':
 
 ## Usage
 
-Right now does not support may options, it's intented to be in a small MTA server (does not support LDAP auth)
+Right now does not support may options, it's intended to be in a small MTA server (does not support LDAP auth)
 
 ## Reference
 
