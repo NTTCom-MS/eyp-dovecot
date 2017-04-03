@@ -21,7 +21,7 @@ basic dovecot installation
 
 ## Module Description
 
-This module is intended to be used by eyp-postfix to setup a virtual domains for postfix using SASL authentication. Anyway, it can also be used to configure dovecot as a standalone service but eyp-postfix is a dependency
+This module is intended to be used by **eyp-postfix** to setup a virtual domains for postfix using **SASL authentication**. Anyway, it can also be used to configure dovecot as a standalone service but eyp-postfix is a dependency
 
 ## Setup
 
