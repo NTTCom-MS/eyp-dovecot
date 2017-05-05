@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.11
+
+* added **password_scheme** to **dovecot::account**
+
 ## 0.1.10
 
 * **process_min_avail** is set to the number of CPU cores in the system

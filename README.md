@@ -21,7 +21,7 @@ basic dovecot installation
 
 ## Module Description
 
-This module is intended to be used by eyp-postfix to setup a virtual domains for postfix using SASL authentication. Anyway, it can also be used to configure dovecot as a standalone service but eyp-postfix is a dependency
+This module is intended to be used by **eyp-postfix** to setup a virtual domains for postfix using **SASL authentication**. Anyway, it can also be used to configure dovecot as a standalone service but eyp-postfix is a dependency
 
 ## Setup
 
@@ -58,15 +58,78 @@ dovecot::account { 'demo@demo.systemadmin.es':
 
 ## Usage
 
-Put the classes, types, and resources for customizing, configuring, and doing
-the fancy stuff with your module here.
+Right now does not support may options, it's intended to be in a small MTA server (for example, does **not** support LDAP auth)
 
 ## Reference
 
-Here, list the classes, types, providers, facts, etc contained in your module.
-This section should include all of the under-the-hood workings of your module so
-people know what the module is touching on their system but don't need to mess
-with things. (We are working on automating this section!)
+### classes
+
+#### dovecot
+
+docvecot installation and basic configuration:
+
+* **manage_package**:                    = true,
+* **package_ensure**:                    = 'installed',
+* **manage_service**:                    = true,
+* **manage_docker_service**:             = true,
+* **service_ensure**:                    = 'running',
+* **service_enable**:                    = true,
+* **listen**:                            = [ \* ],
+* **login_greeting**:                    = 'ready to rock',
+* **verbose_proctitle**:                 = true,
+* **shutdown_clients**:                  = true,
+* **protocols**:                         = [ 'imap', 'lmtp' ],
+* **disable_plaintext_auth**:            = false,
+* **auth_mechanisms**:                   = [ 'plain', 'login' ],
+* **mail_access_groups**:                = 'postfix',
+* **default_login_user**:                = 'postfix',
+* **first_valid_uid**:                   = $dovecot::params::postfix_username_uid_default,
+* **first_valid_gid**:                   = $dovecot::params::postfix_username_gid_default,
+* **mail_location**:                     = 'maildir:/var/vmail/%d/%n',
+* **ssl**:                               = false,
+* **base_dir**:                          = '/var/run/dovecot/',
+* **imap_idle_notify_interval_minutes**: = '2',
+
+#### dovecot::auth
+
+service auth:
+
+* **user**: (default: root)
+
+#### dovecot::auth::unixlistener
+
+* **user**:   = $dovecot::default_login_user,
+* **group**:  = $dovecot::mail_access_groups,
+* **mode**:   = '0660',
+* **socket**: = 'auth-client',
+
+#### dovecot::imaplogin
+
+* **process_min_avail**: = $::processorcount,
+* **user**:              = $dovecot::default_login_user,
+
+#### dovecot::passdb
+
+* **driver**:     = 'passwd-file',
+* **scheme**:     = 'SHA1',
+* **passwdfile**: = $dovecot::params::passwdfile_default,
+
+#### dovecot::userdb
+
+* **driver**:          = 'static',
+* **uid**:             = $dovecot::params::postfix_username_uid_default,
+* **gid**:             = $dovecot::params::postfix_username_gid_default,
+* **home**:            = '/var/vmail/%d/%n',
+* **allow_all_users**: = true,
+
+### defines
+
+#### dovecot::account
+
+* **password**:,
+* **account**:         = $name,
+* **passwdfile**:      = $dovecot::params::passwdfile_default,
+* **password_scheme**: = 'sha1',
 
 ## Limitations
 
