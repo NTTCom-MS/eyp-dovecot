@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.1.12
+
+* Added Ubuntu 18.04 support
+
 ## 0.1.11
 
 * added **password_scheme** to **dovecot::account**
