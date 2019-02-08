@@ -87,7 +87,7 @@ class dovecot::params {
         {
           case $::operatingsystemrelease
           {
-            /^1[12].3$/:
+            /^1[12].[34]$/:
             {
               if($::facts!=undef)
               {
