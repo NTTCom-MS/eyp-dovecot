@@ -12,7 +12,7 @@ class dovecot::params {
       $package_name='dovecot'
       case $::operatingsystemrelease
       {
-        /^[5-7].*$/:
+        /^[5-8].*$/:
         {
           $postfix_username_uid_default='89'
           $postfix_username_gid_default='89'

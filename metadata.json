@@ -1,6 +1,6 @@
 {
   "name": "eyp-dovecot",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "author": "eyp",
   "summary": "dovecot installation and IMAP basic setup",
   "license": "Apache-2.0",
@@ -8,31 +8,31 @@
   "project_page": "https://github.com/NTTCom-MS/eyp-dovecot",
   "issues_url": "https://github.com/NTTCom-MS/eyp-dovecot/issues",
   "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
     {"name":"eyp/eyplib","version_requirement":">= 0.1.0 < 0.2.0"},
     {"name":"eyp/postfix","version_requirement":">= 0.2.15 < 0.3.0"},
-    {"name":"puppetlabs/concat","version_requirement":">= 1.2.3"}
+    {"name":"puppetlabs/concat","version_requirement":">= 1.2.3 < 9.9.9"}
   ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [ "6", "7", "8" ]
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [ "6", "7", "8" ]
     },
     {
       "operatingsystem": "Scientific",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [ "6", "7", "8" ]
     },
     {
       "operatingsystem": "OEL",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [ "6", "7", "8" ]
     },
     {
       "operatingsystem": "OracleLinux",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [ "6", "7", "8" ]
     },
     {
       "operatingsystem": "Ubuntu",
