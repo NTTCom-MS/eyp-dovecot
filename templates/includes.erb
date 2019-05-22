@@ -1,0 +1,8 @@
+<% if @include_try.any? -%>
+
+# includes
+  <%- @include_try.each do |val| -%>
+!include_try <%= val %>
+  <%- end -%>
+
+<% end -%>

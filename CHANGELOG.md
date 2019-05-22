@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 0.1.15
+
+* Added RHEL 8 support
+* Added **include_try** directive to be able to use externally generated config
+
 ## 0.1.14
 
 * Added SLES 12.4 support
