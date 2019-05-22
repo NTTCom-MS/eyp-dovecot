@@ -30,6 +30,7 @@ class dovecot(
                 $mail_location                     = 'maildir:/var/vmail/%d/%n',
                 $ssl                               = false,
                 $base_dir                          = '/var/run/dovecot/',
+                $include_try                       = [],
                 $imap_idle_notify_interval_minutes = '2',
               ) inherits dovecot::params{
 
