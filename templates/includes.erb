@@ -1,4 +1,4 @@
-<% @include_try.any? -%>
+<% if @include_try.any? -%>
   <%- @include_try.each do |val| -%>
 !include_try <%= val %>
   <%- end -%>
