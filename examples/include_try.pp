@@ -1,7 +1,7 @@
 class { 'dovecot':
   default_login_user => 'dovecot',
   mail_access_groups => 'dovecot',
-  include_try => [ '/tmp/lol.conf' ],
+  include_try        => [ '/tmp/lol.conf' ],
 }
 
 class { 'dovecot::userdb': }
