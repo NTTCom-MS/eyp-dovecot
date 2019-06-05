@@ -8,8 +8,8 @@ class { 'dovecot::passdb': }
 class { 'dovecot::auth': }
 
 class { 'dovecot::auth::unixlistener':
-  user   => 'dovecot',
-  group  => 'dovecot',
+  user  => 'dovecot',
+  group => 'dovecot',
 }
 class { 'dovecot::imaplogin':
   user => 'dovecot',
